@@ -3,6 +3,7 @@ function Value(isMinus) {
     this._isMinus = (isMinus != undefined && typeof(isMinus) == "boolean") ? isMinus : false;
     this._curValAsStr = "";
     this._curVal = undefined;
+    this._point = 0;
 }
 
 Value.ofNumber = function(num) {
@@ -26,7 +27,11 @@ Value.prototype.addDigitAsStr = function(val) {
 
 Value.prototype.addPoint = function() {
     this.checkAction();
+    if(this._point == 1) {
+        throw new Error("Invalid format");
+    }
     this._curValAsStr += ".";
+    this._point++;
 }
 
 Value.prototype._submitHelper = function() {
@@ -37,6 +42,7 @@ Value.prototype._submitHelper = function() {
     if(this._isMinus) {
         this._curVal *= -1;
     }
+    return this;
 }
 
 Value.prototype._evaluateHelper = function() {
@@ -44,7 +50,7 @@ Value.prototype._evaluateHelper = function() {
 }
 
 Value.prototype.toString = function() {
-    return this.isMark() ? (" <br>" + this._curVal + "</br> ") : (" " + this._curVal + " "); //TODO
+    return this.markAround(this._curVal);
 }
 
 //TODO: max value

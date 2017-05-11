@@ -22,14 +22,32 @@
 <body>
 
 <div class="container">
-    <form id="form">
+    <form>
         <div class="form-group">
-            <label for="expression">Input expression:</label>
+            <label for="expression">Input expression using just digits, brackets and +-/*:</label>
             <textarea class="form-control" rows="2" id="expression"></textarea>
         </div>
-        <button type="submit" class="btn btn-success disabled">Evaluate</button>
+        <button type="button" class="btn btn-success disabled">Evaluate</button>
+        <button type="button" class="btn btn-info">Reset</button>
     </form>
+
+    <hr>
+
+    <div class="panel-group hide">
+        <h3>Results</h3>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Parsing</div>
+            <div class="panel-body"></div>
+        </div>
+        <div class="alert alert-danger hide">
+        </div>
+        <div class="panel panel-primary hide">
+            <div class="panel-heading">Evaluation</div>
+            <div class="panel-body"></div>
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>

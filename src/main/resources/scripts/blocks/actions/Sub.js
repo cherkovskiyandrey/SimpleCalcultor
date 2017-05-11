@@ -12,6 +12,7 @@ Sub.prototype.getPriority = function() {
 }
 
 Sub.prototype._submitHelper = function() {
+    return this;
 }
 
 Sub.prototype._evaluateHelper = function(stepCallback, left, right) {
@@ -19,5 +20,5 @@ Sub.prototype._evaluateHelper = function(stepCallback, left, right) {
 }
 
 Sub.prototype.toString = function() {
-    return this.isMark() ? " <br>-</br> " : " - "; //TODO
+    return this.markAround(" - ");
 }

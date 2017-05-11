@@ -12,6 +12,7 @@ Sum.prototype.getPriority = function() {
 }
 
 Sum.prototype._submitHelper = function() {
+    return this;
 }
 
 Sum.prototype._evaluateHelper = function(stepCallback, left, right) {
@@ -19,5 +20,5 @@ Sum.prototype._evaluateHelper = function(stepCallback, left, right) {
 }
 
 Sum.prototype.toString = function() {
-    return this.isMark() ? " <br>+</br> " : " + "; //TODO
+    return this.markAround(" + ");
 }

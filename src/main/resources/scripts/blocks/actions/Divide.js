@@ -12,6 +12,7 @@ Divide.prototype.getPriority = function() {
 }
 
 Divide.prototype._submitHelper = function() {
+    return this;
 }
 
 Divide.prototype._evaluateHelper = function(stepCallback, left, right) {
@@ -19,5 +20,5 @@ Divide.prototype._evaluateHelper = function(stepCallback, left, right) {
 }
 
 Divide.prototype.toString = function() {
-    return this.isMark() ? " <br>/</br> " : " / "; //TODO
+    return this.markAround(" / ");
 }
